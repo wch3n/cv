@@ -1,0 +1,131 @@
+\documentclass[a4paper, 11pt, DIV=15,headings=normal]{scrartcl}
+\linespread{1.15}
+\usepackage[automark,headsepline]{scrpage2}
+%\usepackage[T1]{fontenc}
+%\usepackage{titlesec}
+\usepackage[%
+    backend=biber,maxbibnames=99,%
+    isbn=false,sorting=ydnt,%
+    style=phys,%
+    biblabel=brackets,pageranges=false]{biblatex}
+\renewcommand*{\bibfont}{\footnotesize}
+\usepackage[colorlinks, breaklinks, urlcolor=blue]{hyperref}
+\usepackage{mathpazo}
+
+%\renewcommand{\familydefault}{\sfdefault}
+%\usepackage{sfmath}
+
+\addsectionbib{cv.bib}
+
+\begin{document}
+
+\begin{minipage}{0.55\linewidth}
+{\textbf{\textsc{Wei Chen}}}\\
+Nationality: Chinese \\
+Date of Birth: 11 August 1980 \\
+Place of Birth: Shanghai, China \\
+\small \url{http://orcid.org/0000-0002-7496-0341} \\
+\small \url{http://github.com/wayn3}
+\end{minipage}\hfill
+\begin{minipage}{0.40\linewidth}
+Unversit\'{e} Catholique de Louvain\\
+Nanoscopic Physics Division (NAPS)\\
+Chemin des \'{E}toiles, 8 bte L7.03.01 \\
+B-1348, Louvain-la-Neuve, Belgium \\
+\texttt{wei.chen@uclouvain.be}
+\end{minipage}
+\vspace{6mm}
+
+\section*{Education}
+\begin{tabular}{ll}
+09.1998 -- 07.2002 & Bachelor in Physics, Fudan University, Shanghai, China \\
+09.2002 -- 07.2005 & Master in Electrical Engineering, Fudan University \\
+                   & Institute of Microelectronics (Prof.\ Wei Zhang)\\
+                   & ``DFT study of atomic layer deposition of high-$\mathbf{k}$ gate dielectrics''\\
+07.2005 -- 08.2007 & Research assistant, Fudan University\\
+                   & Institute of Microelectronic \\
+                   & ``High-$\mathbf{k}$ dielectrics in nonvolatile memory'' \\
+08.2007 -- 04.2011 & Dr.\ rer.\ nat, Physics, \emph{summa cum laude}  \\
+                   & Leibniz Universit\"{a}t Hannover, Germany\\
+                   & Institut f\"{u}r Festk\"{o}rperphysik (Prof. Herbert Pfn\"{u}r) \\
+                   & ``Adsorption of organic molecules on wide band-gap insulators'' 
+\end{tabular}
+
+\section*{Research Experience}
+\begin{tabular}{ll}
+04.2011 -- 06.2016 & Post-doctoral researcher, Ecole Polytechnique F\'{e}d\'{e}rale de Lausanne (EPFL) \\
+                   & Chair of Atomic Scale Simulation  \\
+                   & (Prof. Alfredo Pasquarello) \\
+                   & ``Defects in solids through $GW$ calculations'', \\
+                   & ``\textit{Ab initio} molecular dynamics of liquid water'' \\
+06.2016 -- present & Post-doctoral researcher, UC Louvain, Belgium \\
+                   & Nanoscopic Physics Division (NAPS) \\ 
+                   & (Profs. Gian-Marco Rignanese and Geoffroy Hautier)  \\
+                   & ``Next-generation high-throughput computational
+                     screening of spin filters''
+\end{tabular}
+
+\section*{Coding skills}
+\begin{tabular}{l}
+Active developer for \href{http://www.abinit.org}{\textsc{abinit}} and 
+\href{http://www.quantum-espresso.org}{\textsc{Quantum espresso}}. \\
+Good knowledge of \textsc{Fortran}, \textsc{Python}, and \textsc{bash} script.\\
+Well versed in parallel computing (\textsc{mpi}). \\
+\end{tabular}
+
+
+\section*{Code developments}
+\begin{tabular}{ll}
+\textsc{abinit}  & Bootstrap exchange-correlation kernel for accurate $GW$ quasiparticle energies, \\
+                 & Gygi-Baldereschi auxiliary function for the treatment of
+Coulomb singularity \\
+\textsc{quantum-espresso} & Range-separated hybrid density functional \\
+\textsc{fnv}     & \textsc{Python} class for finite-size-corrections of
+periodic charged defects \\
+                 & (\url{https://github.com/wayn3/FNV})
+\\
+\end{tabular} 
+
+
+\section*{Teaching Activities}
+\begin{tabular}{ll}
+04.2012 -- 04.2016 & Master's course: Computational Simulation and Physical Systems I \& II \\
+                   & Teaching assistance, EPFL\\
+06.2013 -- 04.2014 & Supervising Master student (Karim Steiner) \\
+                   & Project: Band-offset of lattice matched semiconductor heterojunctions 
+\end{tabular}
+
+\section*{Recent Talks and Seminars}
+\begin{tabular}{ll}
+10.2015         & Universit\'{e} catholique de Louvain, Belgium \\
+                & Invited seminar: ``Efficient vertex corrections in $GW$'' \\
+09.2015         & \textsc{Psi-k} 2015 conference, San Sebastian, Spain \\
+                & Talk: ``Accurate band gaps via efficient vertex corrections in $GW$'' \\
+07.2015         & International Conference on Defects in Semiconductors (ICDS 15), Espoo, Finland \\
+                & Talk: ``Determination of defect energy levels through $GW$''\\
+04.2015         & ``Nothing is Perfect`` workshop, Ascona, Switzerland \\
+                & Invited Talk: ``First-principles determination of defect energy levels through $GW$'' \\
+08.2014         & International conference on the physics of semiconductors (ICPS 14), Austin, USA \\
+                & Talk: ``Band offset of lattice-matched semiconductor heterojunctions'' \\
+07.2013         & International Conference on Defects in Semiconductors (ICDS 13), Bologna, Italy \\
+                & Talk: ``Defect energy levels: Hybrid functionals vs $GW$'' \\
+\end{tabular}
+
+
+\section*{Miscellaneous}
+\begin{tabular}{l}
+Referee for \textit{Phys.\ Rev.\ B}, \textit{Appl.\ Phys. Lett}.
+\end{tabular}
+
+\begin{refsection}[cv.bib]
+\nocite{*}
+\printbibliography[resetnumbers=true, title={Publications (chronological order)}]
+\end{refsection}
+
+\vspace{6mm}
+
+\begin{minipage}{0.4\linewidth}
+\scriptsize Typeset by \LaTeX. Updated on \today.
+\end{minipage}
+
+\end{document}
