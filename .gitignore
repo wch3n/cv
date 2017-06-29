@@ -1,0 +1,10 @@
+*.bak
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.dvi
+*.log
+*.out
+*.xml
+.DS_Store
