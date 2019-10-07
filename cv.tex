@@ -16,7 +16,17 @@
 %\renewcommand{\familydefault}{\sfdefault}
 %\usepackage{sfmath}
 
-\addsectionbib{cv.bib}
+%\addsectionbib{cv.bib}
+
+\addbibresource{cv.bib}
+
+\defbibenvironment{bibselect}
+  {\itemize}
+  {\enditemize}
+  {\item}
+
+\defbibheading{bibselect}[\refname]{%
+    \section*{#1}}
 
 \begin{document}
 
@@ -93,9 +103,11 @@ periodic charged defects \\
 
 \section*{Teaching Activities}
 \begin{tabular}{ll}
+03.2019 -- 06.2019 & Master's course: Atomistic and NAnoscopic Simulations \\
+                   & Teaching assistance, UCLouvain\\
 04.2012 -- 04.2016 & Master's course: Computational Simulation and Physical Systems I \& II \\
                    & Teaching assistance, EPFL\\
-06.2013 -- 04.2014 & Supervising Master student (Karim Steiner) \\
+06.2013 -- 04.2014 & Supervising a Master student (Karim Steiner) \\
                    & Project: Band-offset of lattice matched semiconductor heterojunctions 
 \end{tabular}
 
@@ -127,10 +139,16 @@ periodic charged defects \\
 Referee for \textit{Phys.\ Rev.\ Lett.}, \textit{Phys.\ Rev.\ B}, \textit{Appl.\ Phys. Lett}.
 \end{tabular}
 
-\begin{refsection}[cv.bib]
+\begin{refsegment}
+\AtNextBibliography{\small}
+\nocite{Chen2019,Chen2016,Chen2015,Chen2017,Chen2018a}
+\printbibliography[segment=1, heading=bibselect, title={Selected Publications},env=bibselect]
+\end{refsegment}
+
+\begin{refsegment}
 \nocite{*}
-\printbibliography[resetnumbers=true, title={Publications (chronological order)}]
-\end{refsection}
+\printbibliography[segment=2, resetnumbers=true, title={Publications in Chronological Order}]
+\end{refsegment}
 
 \vspace{6mm}
 
