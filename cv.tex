@@ -6,7 +6,7 @@
 \usepackage[%
     backend=biber,maxbibnames=99,%
     isbn=false,sorting=ydnt,%
-    style=phys,%
+    style=phys,
     biblabel=brackets,pageranges=false]{biblatex}
 \renewcommand*{\bibfont}{\footnotesize}
 \usepackage[colorlinks, breaklinks, urlcolor=blue]{hyperref}
@@ -103,11 +103,11 @@ periodic charged defects \\
 
 \section*{Teaching Activities}
 \begin{tabular}{ll}
-03.2019 -- 06.2019 & Master's course: Atomistic and NAnoscopic Simulations \\
+03.2019 -- 06.2019 & Masters course: Atomistic and NAnoscopic Simulations \\
                    & Teaching assistance, UCLouvain\\
-04.2012 -- 04.2016 & Master's course: Computational Simulation and Physical Systems I \& II \\
+04.2012 -- 04.2016 & Masters course: Computational Simulation and Physical Systems I \& II \\
                    & Teaching assistance, EPFL\\
-06.2013 -- 04.2014 & Supervising a Master student (Karim Steiner) \\
+06.2013 -- 04.2014 & Supervising a Masters student (Karim Steiner) \\
                    & Project: Band-offset of lattice matched semiconductor heterojunctions 
 \end{tabular}
 
@@ -139,21 +139,20 @@ periodic charged defects \\
 Referee for \textit{Phys.\ Rev.\ Lett.}, \textit{Phys.\ Rev.\ B}, \textit{Appl.\ Phys. Lett}.
 \end{tabular}
 
-\begin{refsegment}
+\newrefsegment
 \AtNextBibliography{\small}
 \nocite{Chen2019,Chen2016,Chen2015,Chen2017,Chen2018a}
-\printbibliography[segment=1, heading=bibselect, title={Selected Publications},env=bibselect]
-\end{refsegment}
+\printbibliography[segment=1,heading=bibselect,title={Selected Publications},env=bibselect]
 
-\begin{refsegment}
+\newrefsegment
+\AtNextBibliography{\small}
 \nocite{*}
-\printbibliography[segment=2, resetnumbers=true, title={Publications in Chronological Order}]
-\end{refsegment}
+\printbibliography[resetnumbers=true,title={Publications in Chronological Order}]
 
-\vspace{6mm}
+\bigskip
 
 \begin{minipage}{0.4\linewidth}
-\scriptsize Typeset by \LaTeX. Updated on \today.
+\scriptsize Updated on \today.
 \end{minipage}
 
 \end{document}
