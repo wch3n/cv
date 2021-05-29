@@ -1,8 +1,6 @@
 \documentclass[a4paper, 11pt, DIV=15,headings=normal]{scrartcl}
 \linespread{1.15}
-\usepackage[automark,headsepline]{scrpage2}
-%\usepackage[T1]{fontenc}
-%\usepackage{titlesec}
+\usepackage[automark,headsepline]{scrlayer-scrpage}
 \usepackage[%
     backend=biber,maxbibnames=8,%
     isbn=false,sorting=ydnt,%
@@ -11,12 +9,7 @@
 \renewcommand*{\bibfont}{\footnotesize}
 \usepackage[colorlinks, breaklinks, urlcolor=blue]{hyperref}
 \usepackage{tgtermes}
-\usepackage{mhchem}
-
-%\renewcommand{\familydefault}{\sfdefault}
-%\usepackage{sfmath}
-
-%\addsectionbib{cv.bib}
+\usepackage[version=4]{mhchem}
 
 \addbibresource{cv.bib}
 
@@ -53,13 +46,13 @@ B-1348, Louvain-la-Neuve, Belgium \\
 08.2007 -- 04.2011 & Dr.\ rer.\ nat, \emph{summa cum laude}  \\
                    & Leibniz Universit\"{a}t Hannover, Germany\\
                    & Institut f\"{u}r Festk\"{o}rperphysik (Prof. Herbert Pfn\"{u}r) \\
-                   & $\bullet$ Adsorption of organic molecules on wide band-gap insulators \\
+                   & $\cdot$ Adsorption of organic molecules on wide band-gap insulators \\
 07.2005 -- 08.2007 & Research assistant, Fudan University\\
                    & Institute of Microelectronic \\
-                   & $\bullet$ High-$\mathbf{k}$ dielectrics in nonvolatile memory \\
+                   & $\cdot$ High-$\mathbf{k}$ dielectrics in nonvolatile memory \\
 09.2002 -- 07.2005 & MSc.\ in Electrical Engineering, Fudan University \\
                    & Institute of Microelectronics  \\
-                   & $\bullet$ DFT study on atomic layer deposition of high-$\mathbf{k}$ gate dielectrics\\
+                   & $\cdot$ DFT study on atomic layer deposition of high-$\mathbf{k}$ gate dielectrics\\
 09.1998 -- 07.2002 & BSc., Fudan University, Shanghai, China
 \end{tabular}
 
@@ -68,25 +61,24 @@ B-1348, Louvain-la-Neuve, Belgium \\
 06.2016 -- present & Post-doctoral researcher, UCLouvain, Belgium \\
                    & Institute of Condensed Matter and Nanosciences\\ 
                    & Profs. Gian-Marco Rignanese and Geoffroy Hautier  \\
-                   & $\bullet$ Many-body perturbation theory \\
-                   & $\bullet$ Nonempirical hybrid density functional \\
-                   & $\bullet$ High-throughput computational screening \\
-                   & $\bullet$ High-entropy alloys \\
-                   & $\bullet$ Thin-film solar cells \\
+                   & $\cdot$ Multicomponent alloys \\
+                   & $\cdot$ Emerging kesterite solar absorbers \\
+                   & $\cdot$ Many-body perturbation theory \\
+                   & $\cdot$ Nonempirical hybrid density functional \\
+                   & $\cdot$ High-throughput computational screening \\
                 
 04.2011 -- 03.2016 & Post-doctoral researcher, Ecole Polytechnique F\'{e}d\'{e}rale de Lausanne (EPFL) \\
                    & Chair of Atomic Scale Simulation  \\
                    & Prof. Alfredo Pasquarello \\
-                   & $\bullet$ Defects in semiconductors and insulators \\
-                   & $\bullet$ Interfaces in semiconductor heterojunctions  \\
-                   & $\bullet$ Advanced electronic-structure methods: $GW$ approximation and hybrid functionals \\
-                   & $\bullet$ Electronic structure of liquid water: many-body and nuclear quantum effects
+                   & $\cdot$ Defects in semiconductors and insulators \\
+                   & $\cdot$ Interfaces in semiconductor heterojunctions  \\
+                   & $\cdot$ Advanced electronic-structure methods: $GW$ approximation and hybrid functionals \\
+                   & $\cdot$ Electronic structure of liquid water: many-body and nuclear quantum effects
 \end{tabular}
 
 \section*{Coding skills}
 \begin{tabular}{l}
-Good knowledge of \textsc{Fortran}, \textsc{C}, \textsc{Python}, and \textsc{gnu bash}.\\
-Well versed in parallel computing (\textsc{mpi}). \\
+\textsc{Fortran}, \textsc{C}, \textsc{Python}, \textsc{gnu bash}, \textsc{MPI}. \\
 Active developer for \href{http://www.abinit.org}{\textsc{abinit}} and 
 \href{http://www.quantum-espresso.org}{\textsc{Quantum espresso}}. \\
 \end{tabular}
@@ -116,6 +108,8 @@ periodic charged defects \\
 
 \section*{Recent Talks and Seminars}
 \begin{tabular}{ll}
+05.2021         & MRS Spring Meeting 2021 (virtual)\\
+                & Talk: ``Origin of Low Conversion Efficiency of \ce{Cu2ZnSnS4} Kesterite Solar Absorber''\\
 09.2018         & Swiss Physics Society Annual Meeting 2018, Lausanne, Switzerland \\
                 & Invited talk: ``Electronic structures through $GW$ and hybrid functionals''\\
 08.2017         & 29th International Conference on Defects in Semiconductors (ICDS), Matsue, Japan  \\
@@ -138,20 +132,20 @@ periodic charged defects \\
 
 
 \section*{Miscellaneous}
-\begin{tabular}{l}
+%\begin{tabular}{l}
 Referee for \textit{Phys.\ Rev.\ Lett.}, \textit{Phys.\ Rev.\ B}, \textit{Appl.\ Phys. Lett.},
-\textit{J. Phys. Chem. Lett.}, \textit{J. Phys. Chem.}
-\end{tabular}
+\textit{J. Phys. Chem. Lett.}, \textit{J. Phys. Chem.}, \textit{npj Comput.\ Mater.}
+%end{tabular}
 
-\newrefsegment
-\AtNextBibliography{\small}
-\nocite{Chen2019,Chen2016,Chen2015,Chen2017,Chen2018a}
-\printbibliography[segment=1,heading=bibselect,title={Selected Publications},env=bibselect]
+%\newrefsegment
+%\AtNextBibliography{\small}
+%\nocite{Chen2019,Chen2016,Chen2015,Chen2017,Chen2018a}
+%\printbibliography[segment=1,heading=bibselect,title={Selected Publications},env=bibselect]
 
 \newrefsegment
 \AtNextBibliography{\small}
 \nocite{*}
-\printbibliography[resetnumbers=true,title={Publications in Chronological Order}]
+\printbibliography[title={Publications in Chronological Order}]
 
 \bigskip
 
