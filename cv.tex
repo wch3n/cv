@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, DIV=15,headings=normal]{scrartcl}
+\documentclass[a4paper, 11pt, DIV=15, headings=normal]{scrartcl}
 \linespread{1.15}
 \usepackage[automark,headsepline]{scrlayer-scrpage}
 \usepackage[%
@@ -7,8 +7,11 @@
     style=phys,
     biblabel=brackets,pageranges=false]{biblatex}
 \renewcommand*{\bibfont}{\footnotesize}
-\usepackage[colorlinks, breaklinks, urlcolor=blue]{hyperref}
+\usepackage[svgnames]{xcolor}
+\usepackage[colorlinks, breaklinks, urlcolor=DarkBlue]{hyperref}
 \usepackage{tgtermes}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
 \usepackage[version=4]{mhchem}
 
 \addbibresource{cv.bib}
@@ -20,6 +23,8 @@
 
 \defbibheading{bibselect}[\refname]{%
     \section*{#1}}
+
+\addtokomafont{section}{\color{DimGrey}\sffamily}
 
 \begin{document}
 
@@ -102,8 +107,8 @@ periodic charged defects \\
                    & Teaching assistance, UCLouvain\\
 04.2012 -- 04.2016 & Masters course: Computational Simulation and Physical Systems I \& II \\
                    & Teaching assistance, EPFL\\
-06.2013 -- 04.2014 & Supervising a Masters student (Karim Steiner) \\
-                   & Project: Band-offset of lattice matched semiconductor heterojunctions 
+06.2013 -- 04.2014 & Masters thesis supervisor\\
+                   & Project: Band-offset of lattice matched semiconductor heterojunctions (K.\ Steiner)
 \end{tabular}
 
 \section*{Recent Talks and Seminars}
