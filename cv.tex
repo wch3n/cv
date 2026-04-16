@@ -1,167 +1,148 @@
-\documentclass[a4paper, 11pt, DIV=15, headings=normal]{scrartcl}
-\linespread{1.15}
-\usepackage[automark,headsepline]{scrlayer-scrpage}
-\usepackage[%
-    backend=biber,maxbibnames=8,%
-    isbn=false,sorting=ydnt,%
-    style=phys,
-    biblabel=brackets,pageranges=false]{biblatex}
-\renewcommand*{\bibfont}{\footnotesize}
-\usepackage[svgnames]{xcolor}
-\usepackage[colorlinks, breaklinks, urlcolor=DarkBlue]{hyperref}
-\usepackage{tgtermes}
-\usepackage{helvet}
+\documentclass[a4paper,11pt,oneside]{article}
+
+\usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[margin=1.5cm, left=7.5cm, top=1.5cm, bottom=1.5cm]{geometry}
+\usepackage[default]{sourcesanspro}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{tikz}
 \usepackage[version=4]{mhchem}
+\usepackage[backend=biber, style=phys, sorting=ydnt, maxbibnames=3]{biblatex}
+
+% Colors
+\definecolor{mainblue}{HTML}{003366}
+\definecolor{sidecolor}{HTML}{F0F4F8}
+\definecolor{textgrey}{HTML}{333333}
+
+\setlength{\parindent}{0pt}
 
 \addbibresource{cv.bib}
 
-\defbibenvironment{bibselect}
-  {\itemize}
-  {\enditemize}
-  {\item}
+% Hyperref setup
+\hypersetup{
+    colorlinks=true,
+    urlcolor=mainblue,
+    linkcolor=mainblue
+}
 
-\defbibheading{bibselect}[\refname]{%
-    \section*{#1}}
+% Section styling
+\titleformat{\section}{\Large\bfseries\color{mainblue}\sffamily}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{15pt}{10pt}
 
-\addtokomafont{section}{\color{DimGrey}\sffamily}
+\pagestyle{empty}
+
+% Custom commands
+\newcommand{\skillitem}[2]{\textbf{#1}: #2 \\}
 
 \begin{document}
-\hspace{-0.45cm}
-\begin{minipage}{0.50\linewidth}
-{\Large {Wei \textsc{Chen}}}\\
-%Nationality: Chinese \\
-%Date of Birth: 11 August 1980 \\
-Place of Birth: Shanghai, China \\
-Present residence: Wavre, Belgium \\
-\small \url{https://orcid.org/0000-0002-7496-0341} \\
-\small \url{https://github.com/wch3n}
-\end{minipage}\hfill
-\begin{minipage}{0.45\linewidth}
-Universit\'{e} catholique de Louvain\\
-Institute of Condensed Matter and Nanosciences\\
-Chemin des \'{E}toiles, 8 bte L7.03.01 \\
-B-1348, Louvain-la-Neuve, Belgium \\
-\texttt{wei.chen\_at\_uclouvain.be}
-\end{minipage}
-\vspace{6mm}
+
+% --- SIDEBAR BACKGROUND ---
+\begin{tikzpicture}[remember picture,overlay]
+    \fill[sidecolor] (current page.north west) rectangle ([xshift=6.8cm]current page.south west);
+\end{tikzpicture}
+
+% --- SIDEBAR CONTENT ---
+\begin{tikzpicture}[remember picture,overlay]
+    \node [anchor=north west, xshift=0.8cm, yshift=-1.5cm, text width=5.2cm] at (current page.north west) {
+        {\Huge {Wei}} {\Huge \textsc{Chen}} \\
+        \vspace{4mm}
+        {\color{mainblue}\large \textbf{Chercheur qualifié}} \\
+        {\color{mainblue}\small Computational Materials Science}
+
+        \vspace{1cm}
+
+        \section*{Contact}
+        \small
+        \begin{tabular}{@{}l@{\hspace{3mm}}l}
+            \faEnvelope & \href{mailto:wei.chen@uclouvain.be}{\scriptsize wei.chen@uclouvain.be} \\
+            \faOrcid    & \href{https://orcid.org/0000-0002-7496-0341}{\scriptsize 0000-0002-7496-0341} \\
+            \faGithub   & \href{https://github.com/wch3n}{github.com/wch3n} \\
+            \faMapMarker* & Overijse, Belgium \\
+            \faCalendar*  & 11 August 1980
+        \end{tabular}
+
+        \vspace{1cm}
+
+        \section*{Computing}
+        \small
+        \begin{tabular}{@{}l@{\hspace{3mm}}l}
+            \textbf{Languages} & Python, Fortran, Bash \\
+            \textbf{HPC}       & MPI, GPU, Slurm \\
+            \textbf{DevOps}    & Git, CI/CD, Linux \\
+            \textbf{Data/AI}   & ML, High-throughput
+        \end{tabular}
+
+
+        \vspace{1cm}
+
+        \section*{Languages}
+        \textbf{English}: Fluent \\
+        \textbf{French}: A2 (Learning) \\
+        \textbf{Chinese}: Native
+
+        \vspace{1cm}
+
+        \section*{References}
+        \scriptsize
+        \textbf{Prof.\ G.-M.\ Rignanese} \\
+        UCLouvain, Belgium \\
+        \vspace{2mm}
+        \textbf{Prof.\ G.\ Hautier} \\
+        Rice University, USA \\
+        \vspace{2mm}
+        \textbf{Prof.\ A.\ Pasquarello} \\
+        EPFL, Switzerland \\
+    };
+\end{tikzpicture}
+
+% --- MAIN CONTENT ---
+\section*{Professional Experience}
+
+\textit{IMCN - MODL Pole, UCLouvain, Belgium} \hfill \textbf{2016 -- Present}
+\vspace{1pt}
+\begin{itemize}[leftmargin=*, nosep, itemsep=3pt]
+    \item \textbf{Sustainable energy}: Photocatalysis, high-entropy materials, photovoltaics.
+    \item \textbf{Machine learning}: Cluster expansion, MLIPs.
+    \item \textbf{Theory developement}: Dielectric dependent hybrid functional.
+    \item \textbf{Software Stewardship}: Maintenance of local scientific codebases.
+\end{itemize}
+
+\vspace{4mm}
+\textit{Atomic Scale Simulation, EPFL, Switzerland} \hfill \textbf{2011 -- 2016}
+\vspace{1pt}
+\begin{itemize}[leftmargin=*, nosep]
+    \item Developed electronic-structure methods (GW, hybrid functionals).
+    \item Implemented vertex corrections for high-accuracy band gap calculations.
+\end{itemize}
+
+\section*{Code Developments}
+\begin{itemize}[leftmargin=*, nosep, itemsep=2pt]
+    \item \textbf{GCMC}: Grand Canonical Monte Carlo with replica exchange and hybrid MC/MD support for ASE-compatible MLIPs.
+    \item \textbf{ABINIT}: XC kernels and vertex corrections; range-separated hybrid functional.
+    \item \textbf{Quantum ESPRESSO}: Range-separated hybrid functional implementation.
+    \item \textbf{MPEA Stability}: High-throughput alloy prediction webapp.
+    \item \textbf{FNV}: Python package for charged defect corrections.
+\end{itemize}
 
 \section*{Education}
-\begin{tabular}{ll}
-08.2007 -- 04.2011 & Dr.\ rer.\ nat, \emph{summa cum laude}  \\
-                   & Leibniz Universit\"{a}t Hannover, Germany\\
-                   & Institut f\"{u}r Festk\"{o}rperphysik (Prof. Herbert Pfn\"{u}r) \\
-                   & $\cdot$ Adsorption of organic molecules on wide band-gap insulators \\
-07.2005 -- 08.2007 & Research assistant, Fudan University\\
-                   & Institute of Microelectronic \\
-                   & $\cdot$ High-$\mathbf{k}$ dielectrics in nonvolatile memory \\
-09.2002 -- 07.2005 & MSc.\ in Electrical Engineering, Fudan University \\
-                   & Institute of Microelectronics  \\
-                   & $\cdot$ DFT study on atomic layer deposition of high-$\mathbf{k}$ gate dielectrics\\
-09.1998 -- 07.2002 & BSc., Fudan University, Shanghai, China
-\end{tabular}
+\textbf{Dr. rer. nat. in Physics} (\textit{summa cum laude}) \hfill \textbf{2011} \\
+\textit{Leibniz Universität Hannover, Germany} \\
+\textbf{MSc. in Electrical Engineering} \hfill \textbf{2005} \\
+\textit{Fudan University, Shanghai, China} \\
+\textbf{BSc. in Physics} \hfill \textbf{2002} \\
+\textit{Fudan University, Shanghai, China}
 
-\section*{Research Experience}
-\begin{tabular}{ll}
-06.2016 -- present & Post-doctoral researcher, UCLouvain, Belgium \\
-                   & Institute of Condensed Matter and Nanosciences\\ 
-                   & Profs. Gian-Marco Rignanese and Geoffroy Hautier  \\
-                   & $\cdot$ Multicomponent alloys \\
-                   & $\cdot$ Emerging kesterite solar absorbers \\
-                   & $\cdot$ Many-body perturbation theory \\
-                   & $\cdot$ Nonempirical hybrid density functional \\
-                   & $\cdot$ High-throughput computational screening \\
-                
-04.2011 -- 03.2016 & Post-doctoral researcher, Ecole Polytechnique F\'{e}d\'{e}rale de Lausanne (EPFL) \\
-                   & Chair of Atomic Scale Simulation  \\
-                   & Prof. Alfredo Pasquarello \\
-                   & $\cdot$ Defects in semiconductors and insulators \\
-                   & $\cdot$ Interfaces in semiconductor heterojunctions  \\
-                   & $\cdot$ Advanced electronic-structure methods: $GW$ approximation and hybrid functionals \\
-                   & $\cdot$ Electronic structure of liquid water: many-body and nuclear quantum effects
-\end{tabular}
+\section*{Selected Publications}
+\nocite{Chen2023, Chen2021, Chen2019, Chen2016, Chen2015}
+\printbibliography[heading=none]
 
-\section*{Coding skills}
-\begin{tabular}{l}
-\textsc{Fortran}, \textsc{C}, \textsc{Python}, \textsc{gnu bash}, \textsc{MPI}. \\
-Active developer for \href{http://www.abinit.org}{\textsc{abinit}} and 
-\href{http://www.quantum-espresso.org}{\textsc{Quantum espresso}}. \\
-\end{tabular}
+\vfill
+\scriptsize \color{textgrey} Updated {\today}
 
-
-\section*{Code developments}
-\begin{tabular}{ll}
-\textsc{abinit}  & Bootstrap exchange-correlation kernel for accurate $GW$ quasiparticle energies, \\
-                 & Gygi-Baldereschi auxiliary function for the treatment of
-Coulomb singularity \\
-\textsc{quantum-espresso} & Range-separated hybrid density functional \\
-\textsc{fnv}     & \textsc{Python} class for finite-size-corrections of
-periodic charged defects \\
-                 & (\url{https://github.com/wayn3/FNV})
-\\
-\end{tabular} 
-
-\section*{Teaching Activities}
-\begin{tabular}{ll}
-03.2019 -- 06.2023 & Masters course: Atomistic and Nanoscopic Simulations \\
-                   & Teaching assistance, UCLouvain\\
-04.2012 -- 04.2016 & Masters course: Computational Simulation and Physical Systems I \& II \\
-                   & Teaching assistance, EPFL\\
-06.2013 -- 04.2014 & Masters thesis supervisor\\
-                   & Project: Band-offset of lattice matched semiconductor heterojunctions (K.\ Steiner)
-\end{tabular}
-
-\section*{Recent Talks and Seminars}
-\begin{tabular}{ll}
-09.2021         & E-MRS Fall Meeting 2021\\
-                & Talk: ``Origin of Low Conversion Efficiency of \ce{Cu2ZnSnS4} Kesterite Solar Absorber''\\
-05.2021         & MRS Spring Meeting 2021\\
-                & Talk: ``Origin of Low Conversion Efficiency of \ce{Cu2ZnSnS4} Kesterite Solar Absorber''\\
-09.2018         & Swiss Physics Society Annual Meeting 2018, Lausanne, Switzerland \\
-                & Invited talk: ``Electronic structures through $GW$ and hybrid functionals''\\
-08.2017         & 29th International Conference on Defects in Semiconductors (ICDS), Matsue, Japan  \\
-                & Invited talk: ``Towards accurate determination of defect levels in semiconductors'' \\
-05.2017         & \textsc{abinit} Developer Workshop 2017, Fr\`{e}jus, France \\
-                & Invited talk: ``Accurate band gaps via efficient vertex corrections in $GW$''\\
-10.2015         & Universit\'{e} catholique de Louvain, Belgium \\
-                & Invited seminar: ``Efficient vertex corrections in $GW$'' \\
-09.2015         & \textsc{Psi-k} 2015 conference, San Sebastian, Spain \\
-                & Talk: ``Accurate band gaps via efficient vertex corrections in $GW$'' \\
-07.2015         & International Conference on Defects in Semiconductors (ICDS 15), Espoo, Finland \\
-                & Talk: ``Determination of defect energy levels through $GW$''\\
-04.2015         & ``Nothing is Perfect`` workshop, Ascona, Switzerland \\
-                & Invited Talk: ``First-principles determination of defect energy levels through $GW$'' \\
-08.2014         & International conference on the physics of semiconductors (ICPS 14), Austin, USA \\
-                & Talk: ``Band offset of lattice-matched semiconductor heterojunctions'' \\
-07.2013         & International Conference on Defects in Semiconductors (ICDS 13), Bologna, Italy \\
-                & Talk: ``Defect energy levels: Hybrid functionals vs $GW$'' \\
-\end{tabular}
-
-\section*{Awards}
-\begin{tabular}{ll}
-05.2021        & Best oral presentation, MRS Spring Meeting 2021
-\end{tabular}
-
-\section*{Miscellaneous}
-%\begin{tabular}{l}
-Referee for \textit{Phys.\ Rev.\ Lett.}, \textit{Phys.\ Rev.\ B}, \textit{Appl.\ Phys. Lett.},
-\textit{J. Phys. Chem. Lett.}, \textit{J. Phys. Chem.}, \textit{npj Comput.\ Mater.}
-%end{tabular}
-
-%\newrefsegment
-%\AtNextBibliography{\small}
-%\nocite{Chen2019,Chen2016,Chen2015,Chen2017,Chen2018a}
-%\printbibliography[segment=1,heading=bibselect,title={Selected Publications},env=bibselect]
-
-\newrefsegment
-\AtNextBibliography{\small}
-\nocite{*}
-\printbibliography[title={Publications in Chronological Order}]
-
-\bigskip
-
-\begin{minipage}{0.4\linewidth}
-\scriptsize Updated on \today.
-\end{minipage}
 
 \end{document}
